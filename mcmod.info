@@ -1,15 +1,15 @@
 [
 {
-  "modid": "powercraft",
+  "modid": "powercraftreloaded",
   "name": "PowerCraft Reloaded",
-  "description": "Techinical mod",
-  "version": "${version}",
+  "description": "",
+  "version": "1.0",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/Dannikinfo/PowerCraftReloaded/",
   "updateUrl": "",
-  "authorList": ["Dannik"],
-  "credits": "Developer and author",
-  "logoFile": "",
+  "authorList": ["Dannikinfo"],
+  "credits": "Created by Dannikinfo(github)",
+  "logoFile": "assets/powercraftreloaded/powercraft.png",
   "screenshots": [],
   "dependencies": []
 }
