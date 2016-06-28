@@ -39,7 +39,12 @@ public class CyanCrystal extends Block implements ITileEntityProvider {
 	public int getRenderType() {
 		return -1;
 	}
-
+	
+    @Override
+    public int getRenderBlockPass()
+    {
+        return 1;
+    }
 	public boolean isOpaqueCube() {
 		return false;
 	}

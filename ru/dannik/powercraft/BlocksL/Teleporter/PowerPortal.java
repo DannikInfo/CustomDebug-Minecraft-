@@ -7,19 +7,19 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
+import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import ru.dannik.powercraft.Main;
-import ru.dannik.powercraft.gui.GuiPowerPortal;
 
 public class PowerPortal extends Block implements ITileEntityProvider {
 
 	public PowerPortal() {
-		super(Material.circuits);
+		super(Material.portal);
 		setCreativeTab(Main.tabPowerCraft);
 		setHardness(0.25F);
 		setStepSound(soundTypeMetal);
@@ -42,13 +42,13 @@ public class PowerPortal extends Block implements ITileEntityProvider {
 	public int getRenderType() {
 		return -1;
 	}
-	
-    @SideOnly(Side.CLIENT)
+
+    @Override
     public int getRenderBlockPass()
     {
-        return 0;
+        return 1;
     }
-    
+	
 	public boolean isOpaqueCube() {
 		return false;
 	}
@@ -57,7 +57,7 @@ public class PowerPortal extends Block implements ITileEntityProvider {
 		return false;
 	}
 	
-	public boolean onBlockActivated(ItemStack is, EntityPlayer player, World world, int x, int y, int z){
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int n1, float f1, float f2, float f3){
 		player.openGui(Main.instance, 4, world, (int)player.posX, (int)player.posY, (int)player.posZ);
 		return true;
 	}

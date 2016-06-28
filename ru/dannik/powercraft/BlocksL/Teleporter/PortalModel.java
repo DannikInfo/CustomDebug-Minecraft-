@@ -1,5 +1,7 @@
 package ru.dannik.powercraft.BlocksL.Teleporter;
 
+import org.lwjgl.opengl.GL11;
+
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -73,6 +75,7 @@ public class PortalModel extends ModelBase{
 	  //Shape2.render(0.0625F);
 	  Shape3.render(0.0625F);
 	  Shape4.render(0.0625F);
+	  GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.9F);
 	  Shape5.render(0.0625F);
 	}
 }
