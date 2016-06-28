@@ -25,6 +25,8 @@ import ru.dannik.powercraft.BlocksL.Crystal.Yellow.YellowCrystal;
 import ru.dannik.powercraft.BlocksL.Harvester.Harvester;
 import ru.dannik.powercraft.BlocksL.IronFrame.IronFrame;
 import ru.dannik.powercraft.BlocksL.IronFrame.TileEntityIronFrame;
+import ru.dannik.powercraft.BlocksL.Laser.Laser;
+import ru.dannik.powercraft.BlocksL.Laser.TileEntityLaser;
 import ru.dannik.powercraft.BlocksL.Teleporter.PowerPortal;
 import ru.dannik.powercraft.BlocksL.Teleporter.TileEntityPowerPortal;
 import ru.dannik.powercraft.BlocksL.logic.SpecialController;
@@ -46,7 +48,9 @@ public class BlockList {
 	public static Block harvester;
 	public static Block spawner;
 	public static Block special_controller;
-	//public static Block redstone_tick;
+	//public static Block redstone_tick; добавлю в будущих обновлениях
+	//public static Block chunker; добавлю в будущих обновлениях
+	public static Block laser;
 	
 	public static void Blocks(){
 		
@@ -66,6 +70,8 @@ public class BlockList {
 		spawner = new Spawner();
 		special_controller = new SpecialController();
 		//redstone_tick = new RedstoneTick();
+		//chunker = new Chunker();
+		laser = new Laser();
 		
 		//Регистрация блоков в игре
 		
@@ -83,6 +89,8 @@ public class BlockList {
 		GameRegistry.registerBlock(spawner, "spawner");
 		GameRegistry.registerBlock(special_controller, "specialcontroller");
 		//GameRegistry.registerBlock(redstone_tick, "redstonetick");
+		//GameRegistry.registerBlock(chunker, "chunk loader");
+		GameRegistry.registerBlock(laser, "laser");
 		
 		//Регистрация TileEntity
 		
@@ -96,6 +104,8 @@ public class BlockList {
 		GameRegistry.registerTileEntity(TileEntityOrangeCrystal.class, "TileEntityOrangeCrystal");
 		GameRegistry.registerTileEntity(TileEntityCyanCrystal.class, "TileEntityCyanCrystal");
 		GameRegistry.registerTileEntity(TileEntityYellowCrystal.class, "TileEntityYellowCrystal");
+		//GameRegistry.registerTileEntity(TileEntityChunker.class, "TileEntityChunker");
+		GameRegistry.registerTileEntity(TileEntityLaser.class, "TileEntityLaser");
 		
 		//Рецепты крафта
 		
@@ -104,6 +114,7 @@ public class BlockList {
 		GameRegistry.addRecipe(new ItemStack(spawner, 1), new Object[]{ "#B#", "BDB", "#B#", '#', Blocks.iron_bars, 'B', Blocks.cobblestone_wall, 'D', Items.diamond});
 		GameRegistry.addRecipe(new ItemStack(special_controller, 1), new Object[]{ "RRR", "SRS", "###", '#', Items.iron_ingot, 'R', Items.redstone, 'S', Blocks.stone});
 		//GameRegistry.addRecipe(new ItemStack(redstone_tick, 1), new Object[]{ "#R#", "ROR", "#R#", '#', Items.iron_ingot, 'R', Items.redstone, 'O', Blocks.obsidian});
+		
 		//Локализация в игре
 		
 		LanguageRegistry.addName(powerportal, "Teleporter");
@@ -120,5 +131,7 @@ public class BlockList {
 		LanguageRegistry.addName(spawner, "Spawner");
 		LanguageRegistry.addName(special_controller, "Special controller");
 		//LanguageRegistry.addName(redstone_tick, "Redstone tick");
+		//LanguageRegistry.addName(chunker, "Chunk loader");
+		LanguageRegistry.addName(laser, "Laser");
 	}
 }
