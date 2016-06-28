@@ -20,8 +20,7 @@ public class InventoryHighStackCompressor implements IInventory {
 	
 	@Override
 	public int getInventoryStackLimit() {
-		int stack_size = 512;
-		return stack_size;//Лимит размер стака в слоте
+		return 512;//Лимит размер стака в слоте
 	}
 	
 	@Override
