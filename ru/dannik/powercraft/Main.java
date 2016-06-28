@@ -5,12 +5,15 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.ForgeChunkManager;
 import ru.dannik.powercraft.BlocksL.BlockList;
+import ru.dannik.powercraft.BlocksL.Chunker.ChunkerCallback;
 import ru.dannik.powercraft.ItemsL.ItemList;
 import ru.dannik.powercraft.ItemsL.activationcrystal.Plasm;
 import ru.dannik.powercraft.gui.GuiHandler;
@@ -29,7 +32,8 @@ public class Main {
 	@EventHandler
 	public void preLoad(FMLPreInitializationEvent event)
 	{
-		BlockList.Blocks();		  
+		BlockList.Blocks();
+		Recipe.recipe();
 		ItemList.Items();
 		proxy.preInit();
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
@@ -43,5 +47,15 @@ public class Main {
 		
 		//Entity
 		EntityRegistry.registerModEntity(Plasm.class, "plasm", 0, this, 40, 100, true);
-	}	
+	}
+	
+	@EventHandler
+    public void postInit(FMLPostInitializationEvent event)
+    {
+    	ForgeChunkManager.setForcedChunkLoadingCallback(instance, new ChunkerCallback());
+    }
+	
+	public static Main getMod(){
+		return instance;
+	}
 }

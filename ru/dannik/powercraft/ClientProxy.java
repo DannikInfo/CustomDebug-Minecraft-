@@ -1,7 +1,6 @@
 package ru.dannik.powercraft;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
-import cpw.mods.fml.common.registry.EntityRegistry;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
@@ -33,10 +32,12 @@ import ru.dannik.powercraft.BlocksL.Crystal.Yellow.TileEntityYellowCrystal;
 import ru.dannik.powercraft.BlocksL.IronFrame.RendererIronFrame;
 import ru.dannik.powercraft.BlocksL.IronFrame.RendererItemIronFrame;
 import ru.dannik.powercraft.BlocksL.IronFrame.TileEntityIronFrame;
+import ru.dannik.powercraft.BlocksL.Laser.RendererItemLaser;
+import ru.dannik.powercraft.BlocksL.Laser.RendererLaser;
+import ru.dannik.powercraft.BlocksL.Laser.TileEntityLaser;
 import ru.dannik.powercraft.BlocksL.Teleporter.RendererItemPowerPortal;
 import ru.dannik.powercraft.BlocksL.Teleporter.RendererPowerPortal;
 import ru.dannik.powercraft.BlocksL.Teleporter.TileEntityPowerPortal;
-import ru.dannik.powercraft.ItemsL.activationcrystal.Plasm;
 
 public class ClientProxy extends CommonProxy {
 
@@ -58,6 +59,7 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityOrangeCrystal.class, new RendererOrangeCrystal());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCyanCrystal.class, new RendererCyanCrystal());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityYellowCrystal.class, new RendererYellowCrystal());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLaser.class, new RendererLaser());
 		
 		//items
 		
@@ -71,6 +73,7 @@ public class ClientProxy extends CommonProxy {
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.orangecrystal), (IItemRenderer) new RendererItemOrangeCrystal());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.cyancrystal), (IItemRenderer) new RendererItemCyanCrystal());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.yellowcrystal), (IItemRenderer) new RendererItemYellowCrystal());
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.laser), (IItemRenderer) new RendererItemLaser());
 		
 	}
 
