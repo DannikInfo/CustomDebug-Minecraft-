@@ -23,23 +23,29 @@ public class ContainerHighStackCompressor extends Container {
 		int k;
 
 		//Слоты инвентаря Item Storage
-		for (j = 0; j < numRows; ++j) {
-			for (k = 0; k < 9; ++k) {
-				addSlotToContainer(new StorageSlot(inv, k + j * 9, 8 + k * 18, 18 + j * 18));
-			}
-		}
+        for (i = 0; i < 3; ++i)
+        {
+            for (j = 0; j < 3; ++j)
+            {
+                this.addSlotToContainer(new Slot(inv, j + i * 3, 62 + j * 18, 17 + i * 18));
+            }
+        }
 
 		//Слоты инвентаря игрока
-		for (j = 0; j < 3; ++j) {
-			for (k = 0; k < 9; ++k) {
-				addSlotToContainer(new SlotNoTakeStorage(player.inventory, k + j * 9 + 9, 8 + k * 18, 103 + j * 18 + i));
-			}
-		}
+        for (i = 0; i < 3; ++i)
+        {
+            for (j = 0; j < 9; ++j)
+            {
+                this.addSlotToContainer(new Slot(player.inventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+            }
+        }
 
 		//Слоты хот-бара игрока
-		for (j = 0; j < 9; ++j) {
-			addSlotToContainer(new SlotNoTakeStorage(player.inventory, j, 8 + j * 18, 161 + i));
-		}
+
+        for (i = 0; i < 9; ++i)
+        {
+            this.addSlotToContainer(new Slot(player.inventory, i, 8 + i * 18, 142));
+        }
 
 	}
 
