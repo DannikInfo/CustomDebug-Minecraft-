@@ -16,7 +16,7 @@ import ru.dannik.powercraft.Main;
 public class IronFrame extends Block implements ITileEntityProvider {
 
 	public IronFrame() {
-		super(Material.circuits);
+		super(Material.iron);
 		setCreativeTab(Main.tabPowerCraft);
 		setHardness(4F);
 		setStepSound(soundTypeMetal);
