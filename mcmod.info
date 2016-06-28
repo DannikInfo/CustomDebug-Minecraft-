@@ -1,0 +1,16 @@
+[
+{
+  "modid": "powercraft",
+  "name": "PowerCraft Reloaded",
+  "description": "Techinical mod",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Dannik"],
+  "credits": "Developer and author",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
