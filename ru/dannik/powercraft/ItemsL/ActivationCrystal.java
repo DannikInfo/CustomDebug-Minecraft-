@@ -14,6 +14,7 @@ public class ActivationCrystal extends Item{
     protected ActivationCrystal() {
     	this.setCreativeTab(Main.tabPowerCraft);
     	this.setTextureName("powercraftreloaded:ActivationCrystal");
+    	maxStackSize = 1;
     }
     
     public ItemStack onItemRightClick(ItemStack is, World world, EntityPlayer player)

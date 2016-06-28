@@ -1,6 +1,8 @@
 package ru.dannik.powercraft.ItemsL;
 
-import com.sun.tools.javac.util.List;
+
+
+import java.util.List;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -13,7 +15,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import ru.dannik.powercraft.Main;
-import ru.dannik.powercraft.gui.ContainerBigCompressor;
 import ru.dannik.powercraft.gui.ContainerHighStackCompressor;
 
 public class HighStackCompressor extends Item{
@@ -21,6 +22,7 @@ public class HighStackCompressor extends Item{
 	protected HighStackCompressor(){
 		this.setCreativeTab(Main.tabPowerCraft);
 		this.setTextureName("powercraftreloaded:HighStackCompressor");
+		maxStackSize = 1;
 	}
 
 			public ItemStack onItemRightClick(ItemStack is, World world, EntityPlayer player) {
@@ -37,14 +39,6 @@ public class HighStackCompressor extends Item{
 			public void getSubItems(Item id, CreativeTabs table, List list) {
 				//list.add(new ItemStack(id, 1, 0));
 				list.add(addNBT(id, size_storage.SIZE1));
-				list.add(addNBT(id, size_storage.SIZE2));
-				list.add(addNBT(id, size_storage.SIZE3));
-				list.add(addNBT(id, size_storage.SIZE4));
-				list.add(addNBT(id, size_storage.SIZE5));
-				list.add(addNBT(id, size_storage.SIZE6));
-				list.add(addNBT(id, size_storage.SIZE7));
-				list.add(addNBT(id, size_storage.SIZE8));
-				list.add(addNBT(id, size_storage.SIZE9));
 			}
 			
 			public void addInformation(ItemStack is, EntityPlayer player, List list, boolean flag) {
@@ -69,15 +63,7 @@ public class HighStackCompressor extends Item{
 
 			public static enum size_storage {
 
-				SIZE1(9),//(9 * 1)
-				SIZE2(18),//(9 * 2)
-				SIZE3(27),//(9 * 3)//размеры как у одинарного сундука
-				SIZE4(36),//(9 * 4)
-				SIZE5(45),//(9 * 5)
-				SIZE6(54),//(9 * 6)//размеры как у двойного сундука
-				SIZE7(63),//(9 * 7)
-				SIZE8(72),//(9 * 8)
-				SIZE9(81);//(9 * 9)
+				SIZE1(9);//(9 * 1)
 
 				private int size;
 

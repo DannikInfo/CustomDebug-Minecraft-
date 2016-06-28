@@ -18,6 +18,7 @@ public class HoloLens extends ItemArmor{
             this.setCreativeTab(Main.tabPowerCraft);
             this.setMaxStackSize(1);
             this.setTextureName();
+            maxStackSize = 1;
     }
 
     public void setTextureName ()

@@ -15,6 +15,7 @@ public class EnderCompressor extends Item{
 	protected EnderCompressor(){
 		this.setCreativeTab(Main.tabPowerCraft);
 		this.setTextureName("powercraftreloaded:EnderCompressor");
+		maxStackSize = 1;
 	}
 	
 	public boolean onRightItemClick(ItemStack is, EntityPlayer player, World world, int x, int y, int z){
