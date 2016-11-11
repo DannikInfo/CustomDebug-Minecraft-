@@ -28,7 +28,7 @@ public class ItemList {
 	public static Item PowerDust;
 	public static Item SlimeBoots;
 	public static Item HoloLens;
-	//public static Item CorePortal;
+	public static Item CorePortal;
 	
 	public static void Items(){
 		
@@ -50,7 +50,7 @@ public class ItemList {
 		PowerDust = new PowerDust().setUnlocalizedName("Power dust");
 		SlimeBoots = new SlimeBoots(0, 3).setUnlocalizedName("Slime Boots").setTextureName("powercraftreloaded:SlimeBoots");
 		HoloLens = new HoloLens(0, 0).setUnlocalizedName("NightVision glasses").setTextureName("powercraftreloaded:HoloLens");
-		//CorePortal = new CorePortal().setUnlocalizedName("Core portal");
+		CorePortal = new CorePortal().setUnlocalizedName("Core portal");
 		
 		//register items in game
 		
@@ -70,21 +70,14 @@ public class ItemList {
 		GameRegistry.registerItem(PowerDust, "powerdust");
 		GameRegistry.registerItem(SlimeBoots, "slimeboots");
 		GameRegistry.registerItem(HoloLens, "hololens");
-		//GameRegistry.registerItem(CorePortal, "coreportal");
+		GameRegistry.registerItem(CorePortal, "coreportal");
 
 		//add recipe in game
 		
 		//===recipe ActivationCrystal
 		
-        GameRegistry.addRecipe(new ItemStack(ActivationCrystal, 1), new Object[]{ "#X#", "RYR", " # ", 'X', BlockList.lightbluecrystal, '#', Items.iron_ingot, 'Y', Items.diamond, 'R', Items.redstone});
-        GameRegistry.addRecipe(new ItemStack(ActivationCrystal, 1), new Object[]{ "#X#", "RYR", " # ", 'X', BlockList.redcrystal, '#', Items.iron_ingot, 'Y', Items.diamond, 'R', Items.redstone});
-        GameRegistry.addRecipe(new ItemStack(ActivationCrystal, 1), new Object[]{ "#X#", "RYR", " # ", 'X', BlockList.greencrystal, '#', Items.iron_ingot, 'Y', Items.diamond, 'R', Items.redstone});
-        GameRegistry.addRecipe(new ItemStack(ActivationCrystal, 1), new Object[]{ "#X#", "RYR", " # ", 'X', BlockList.darkbluecrystal, '#', Items.iron_ingot, 'Y', Items.diamond, 'R', Items.redstone});
-        GameRegistry.addRecipe(new ItemStack(ActivationCrystal, 1), new Object[]{ "#X#", "RYR", " # ", 'X', BlockList.purplecrystal, '#', Items.iron_ingot, 'Y', Items.diamond, 'R', Items.redstone});
-        GameRegistry.addRecipe(new ItemStack(ActivationCrystal, 1), new Object[]{ "#X#", "RYR", " # ", 'X', BlockList.orangecrystal, '#', Items.iron_ingot, 'Y', Items.diamond, 'R', Items.redstone});
-        GameRegistry.addRecipe(new ItemStack(ActivationCrystal, 1), new Object[]{ "#X#", "RYR", " # ", 'X', BlockList.cyancrystal, '#', Items.iron_ingot, 'Y', Items.diamond, 'R', Items.redstone});
-        GameRegistry.addRecipe(new ItemStack(ActivationCrystal, 1), new Object[]{ "#X#", "RYR", " # ", 'X', BlockList.yellowcrystal, '#', Items.iron_ingot, 'Y', Items.diamond, 'R', Items.redstone});
-      
+		GameRegistry.addRecipe(new ItemStack(ActivationCrystal, 1), new Object[]{ "#X#", "RYR", " # ", 'X', BlockList.crystal, '#', Items.iron_ingot, 'Y', Items.diamond, 'R', Items.redstone});
+     
 		//===other item recipe
         
         GameRegistry.addRecipe(new ItemStack(CraftingTool, 1), new Object[]{ "#R#", "RXR", "#R#", 'X', Blocks.iron_block, '#', Blocks.crafting_table, 'R', Items.redstone});
@@ -94,18 +87,12 @@ public class ItemList {
         GameRegistry.addRecipe(new ItemStack(HighStackCompressor, 1), new Object[]{ "ARA", "ADA", "ARA", 'A', Blocks.piston, 'D', Items.diamond, 'R', Blocks.ender_chest});
         GameRegistry.addShapelessRecipe(new ItemStack(SlimeBoots, 1), new Object[] {Items.iron_boots, Items.slime_ball, Items.slime_ball, Items.slime_ball});
         GameRegistry.addRecipe(new ItemStack(HoloLens, 1), new Object[]{ "III", "GBG", "I I", 'I', Items.iron_ingot, 'G', Blocks.glass, 'B', Items.golden_apple});
-       // GameRegistry.addRecipe(new ItemStack(CorePortal, 1), new Object[]{ "ORO", "RDR", "ORO", 'O', Blocks.obsidian, 'R', Items.redstone, 'D', Items.diamond});
+        GameRegistry.addRecipe(new ItemStack(CorePortal, 1), new Object[]{ "ORO", "RDR", "ORO", 'O', Blocks.obsidian, 'R', Items.redstone, 'D', Items.diamond});
         
         //===power dust recipe
         
-        GameRegistry.addShapelessRecipe(new ItemStack(PowerDust, 4), new Object[] {BlockList.cyancrystal});
-        GameRegistry.addShapelessRecipe(new ItemStack(PowerDust, 4), new Object[] {BlockList.darkbluecrystal});
-        GameRegistry.addShapelessRecipe(new ItemStack(PowerDust, 4), new Object[] {BlockList.greencrystal});
-        GameRegistry.addShapelessRecipe(new ItemStack(PowerDust, 4), new Object[] {BlockList.lightbluecrystal});
-        GameRegistry.addShapelessRecipe(new ItemStack(PowerDust, 4), new Object[] {BlockList.orangecrystal});
-        GameRegistry.addShapelessRecipe(new ItemStack(PowerDust, 4), new Object[] {BlockList.purplecrystal});
-        GameRegistry.addShapelessRecipe(new ItemStack(PowerDust, 4), new Object[] {BlockList.redcrystal});
-        GameRegistry.addShapelessRecipe(new ItemStack(PowerDust, 4), new Object[] {BlockList.yellowcrystal});
+       GameRegistry.addShapelessRecipe(new ItemStack(PowerDust, 4), new Object[] {BlockList.crystal});
+        
 
 		//localization in game
 		
@@ -125,7 +112,7 @@ public class ItemList {
 		LanguageRegistry.addName(PowerDust, "Power dust");
 		LanguageRegistry.addName(SlimeBoots, "Slime boots");
 		LanguageRegistry.addName(HoloLens, "Night Vision Glasses");
-		//LanguageRegistry.addName(CorePortal, "Core portal");
+		LanguageRegistry.addName(CorePortal, "Portal core");
 	}
 
 }

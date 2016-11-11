@@ -21,6 +21,6 @@ public class TabPowerCraft extends CreativeTabs {
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem()
 	{
-	return ItemList.ActivationCrystal;
+		return ItemList.ActivationCrystal;
 	}
 }

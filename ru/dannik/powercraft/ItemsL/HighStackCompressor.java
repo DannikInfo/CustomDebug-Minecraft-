@@ -15,7 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import ru.dannik.powercraft.Main;
-import ru.dannik.powercraft.gui.ContainerHighStackCompressor;
+import ru.dannik.powercraft.gui.container.ContainerHighStackCompressor;
 
 public class HighStackCompressor extends Item{
 

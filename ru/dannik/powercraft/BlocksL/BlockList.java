@@ -6,110 +6,88 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import ru.dannik.powercraft.BlocksL.Crystal.Cyan.CyanCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Cyan.TileEntityCyanCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.DarkBlue.DarkBlueCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.DarkBlue.TileEntityDarkBlueCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Green.GreenCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Green.TileEntityGreenCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.LightBlue.LightBlueCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.LightBlue.TileEntityLightBlueCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Orange.OrangeCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Orange.TileEntityOrangeCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Purple.PurpleCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Purple.TileEntityPurpleCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Red.RedCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Red.TileEntityRedCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Yellow.TileEntityYellowCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Yellow.YellowCrystal;
-import ru.dannik.powercraft.BlocksL.Harvester.Harvester;
-import ru.dannik.powercraft.BlocksL.IronFrame.IronFrame;
-import ru.dannik.powercraft.BlocksL.IronFrame.TileEntityIronFrame;
+import ru.dannik.powercraft.BlocksL.Crystal.Crystal;
+import ru.dannik.powercraft.BlocksL.Crystal.ItemBlockCrystal;
+import ru.dannik.powercraft.BlocksL.Crystal.TileEntityCrystal;
 import ru.dannik.powercraft.BlocksL.Laser.Laser;
 import ru.dannik.powercraft.BlocksL.Laser.TileEntityLaser;
-import ru.dannik.powercraft.BlocksL.Teleporter.PowerPortal;
-import ru.dannik.powercraft.BlocksL.Teleporter.TileEntityPowerPortal;
+import ru.dannik.powercraft.BlocksL.Teleporter.Teleporter;
+import ru.dannik.powercraft.BlocksL.Teleporter.TileEntityTeleporter;
+import ru.dannik.powercraft.BlocksL.deco.Chimeny.Chimeny;
+import ru.dannik.powercraft.BlocksL.deco.Chimeny.ItemBlockChimeny;
+import ru.dannik.powercraft.BlocksL.deco.Chimeny.TileEntityChimeny;
+import ru.dannik.powercraft.BlocksL.deco.IronFrame.IronFrame;
+import ru.dannik.powercraft.BlocksL.deco.IronFrame.TileEntityIronFrame;
 import ru.dannik.powercraft.BlocksL.logic.SpecialController;
-import ru.dannik.powercraft.ItemsL.activationcrystal.Spawner;
+import ru.dannik.powercraft.BlocksL.logic.Detector.Detector;
+import ru.dannik.powercraft.BlocksL.logic.Detector.DetectorOff;
+import ru.dannik.powercraft.BlocksL.logic.Detector.ItemBlockDetector;
+import ru.dannik.powercraft.BlocksL.logic.Detector.TileEntityDetector;
+import ru.dannik.powercraft.BlocksL.logic.Detector.TileEntityDetectorOff;
 
 public class BlockList {
 	//Create variable for block
 	
-	public static Block powerportal;
+	public static Block teleporter;
 	public static Block ironframe;
-	public static Block lightbluecrystal;
-	public static Block redcrystal;
-	public static Block greencrystal;
-	public static Block darkbluecrystal;
-	public static Block purplecrystal;
-	public static Block orangecrystal;
-	public static Block cyancrystal;
-	public static Block yellowcrystal;
+	public static Block crystal;
 	public static Block harvester;
 	public static Block spawner;
 	public static Block special_controller;
-	//public static Block redstone_tick; добавлю в будущих обновлениях
+	//public static Block pulsar; ООООчень трудно для меня это реализовать! пока что отложено до лучших времен
 	//public static Block chunker; добавлю в будущих обновлениях
 	public static Block laser;
+	public static Block chimeny;
+	public static Block detector;
+	public static Block detectoroff;
 	
 	public static void Blocks(){
 		
 		//Присвоение переменных 
 		
-		powerportal = new PowerPortal();
+		teleporter = new Teleporter();
 		ironframe = new IronFrame();
-		lightbluecrystal = new LightBlueCrystal();
-		redcrystal = new RedCrystal();
-		greencrystal = new GreenCrystal();
-		darkbluecrystal = new DarkBlueCrystal();
-		purplecrystal = new PurpleCrystal();
-		orangecrystal = new OrangeCrystal();
-		cyancrystal = new CyanCrystal();
-		yellowcrystal = new YellowCrystal();
+		crystal = new Crystal();
 		harvester = new Harvester();
 		spawner = new Spawner();
 		special_controller = new SpecialController();
-		//redstone_tick = new RedstoneTick();
+		//pulsar = new Pulsar();
 		//chunker = new Chunker();
 		laser = new Laser();
+		chimeny = new Chimeny();
+		detector = new Detector();
+		detectoroff = new DetectorOff();
 		
 		//Регистрация блоков в игре
 		
-		GameRegistry.registerBlock(powerportal, "powerportal");
+		GameRegistry.registerBlock(teleporter, "teleporter");
 		GameRegistry.registerBlock(ironframe, "ironframe");
-		GameRegistry.registerBlock(lightbluecrystal, "lightbluecrystal");
-		GameRegistry.registerBlock(redcrystal, "redcrystal");
-		GameRegistry.registerBlock(greencrystal, "greencrystal");
-		GameRegistry.registerBlock(darkbluecrystal, "darkbluecrystal");
-		GameRegistry.registerBlock(purplecrystal, "purplecrystal");
-		GameRegistry.registerBlock(orangecrystal, "orangecrystal");
-		GameRegistry.registerBlock(cyancrystal, "cyancrystal");
-		GameRegistry.registerBlock(yellowcrystal, "yellowcrystal");
+		GameRegistry.registerBlock(crystal, ItemBlockCrystal.class, "crystal");
 		GameRegistry.registerBlock(harvester, "harvester");
 		GameRegistry.registerBlock(spawner, "spawner");
 		GameRegistry.registerBlock(special_controller, "specialcontroller");
-		//GameRegistry.registerBlock(redstone_tick, "redstonetick");
+		//GameRegistry.registerBlock(pulsar, "redstonepulsar");
 		//GameRegistry.registerBlock(chunker, "chunk loader");
 		GameRegistry.registerBlock(laser, "laser");
+		GameRegistry.registerBlock(chimeny, ItemBlockChimeny.class, "chimeny");
+		GameRegistry.registerBlock(detector, ItemBlockDetector.class, "detector");
+		GameRegistry.registerBlock(detectoroff, ItemBlockDetector.class, "detectoroff");
 		
 		//Регистрация TileEntity
 		
-		GameRegistry.registerTileEntity(TileEntityPowerPortal.class, "TileEntityPowerPortal");
+		GameRegistry.registerTileEntity(TileEntityTeleporter.class, "TileEntityPowerPortal");
 		GameRegistry.registerTileEntity(TileEntityIronFrame.class, "TileEntityIronFrame");
-		GameRegistry.registerTileEntity(TileEntityLightBlueCrystal.class, "TileEntityLightBlueCrystal");
-		GameRegistry.registerTileEntity(TileEntityRedCrystal.class, "TileEntityRedCrystal");
-		GameRegistry.registerTileEntity(TileEntityGreenCrystal.class, "TileEntityGreenCrystal");
-		GameRegistry.registerTileEntity(TileEntityDarkBlueCrystal.class, "TileEntityDarkBlueCrystal");
-		GameRegistry.registerTileEntity(TileEntityPurpleCrystal.class, "TileEntityPurpleCrystal");
-		GameRegistry.registerTileEntity(TileEntityOrangeCrystal.class, "TileEntityOrangeCrystal");
-		GameRegistry.registerTileEntity(TileEntityCyanCrystal.class, "TileEntityCyanCrystal");
-		GameRegistry.registerTileEntity(TileEntityYellowCrystal.class, "TileEntityYellowCrystal");
+		GameRegistry.registerTileEntity(TileEntityCrystal.class, "TileEntityCrystal");
 		//GameRegistry.registerTileEntity(TileEntityChunker.class, "TileEntityChunker");
 		GameRegistry.registerTileEntity(TileEntityLaser.class, "TileEntityLaser");
+		GameRegistry.registerTileEntity(TileEntityChimeny.class, "TileEntityChimeny");
+		//GameRegistry.registerTileEntity(TileEntityPulsar.class, "TileEntityPulsar");
+		GameRegistry.registerTileEntity(TileEntityDetector.class, "TileEntityDetector");
+		GameRegistry.registerTileEntity(TileEntityDetectorOff.class, "TileEntityDetectorOff");
 		
 		//Рецепты крафта
 		
-		GameRegistry.addRecipe(new ItemStack(powerportal, 1), new Object[]{ " E ", "ECE", "###", '#', Items.iron_ingot, 'E', Items.ender_pearl, 'C', Blocks.obsidian});
+		GameRegistry.addRecipe(new ItemStack(teleporter, 1), new Object[]{ " E ", "ECE", "###", '#', Items.iron_ingot, 'E', Items.ender_pearl, 'C', Blocks.obsidian});
 		GameRegistry.addRecipe(new ItemStack(ironframe, 4), new Object[]{ "###", "# #", "###", '#', Items.iron_ingot});
 		GameRegistry.addRecipe(new ItemStack(spawner, 1), new Object[]{ "#B#", "BDB", "#B#", '#', Blocks.iron_bars, 'B', Blocks.cobblestone_wall, 'D', Items.diamond});
 		GameRegistry.addRecipe(new ItemStack(special_controller, 1), new Object[]{ "RRR", "SRS", "###", '#', Items.iron_ingot, 'R', Items.redstone, 'S', Blocks.stone});
@@ -117,20 +95,12 @@ public class BlockList {
 		
 		//Локализация в игре
 		
-		LanguageRegistry.addName(powerportal, "Teleporter");
+		LanguageRegistry.addName(teleporter, "Teleporter");
 		LanguageRegistry.addName(ironframe, "Iron frame");
-		LanguageRegistry.addName(lightbluecrystal, "Lightblue crystal");
-		LanguageRegistry.addName(redcrystal, "Red crystal");
-		LanguageRegistry.addName(greencrystal, "Green crystal");
-		LanguageRegistry.addName(darkbluecrystal, "Darkblue crystal");
-		LanguageRegistry.addName(purplecrystal, "Purple crystal");
-		LanguageRegistry.addName(orangecrystal, "Orange crystal");
-		LanguageRegistry.addName(cyancrystal, "Cyan crystal");
-		LanguageRegistry.addName(yellowcrystal, "Yellow crystal");
 		LanguageRegistry.addName(harvester, "Harvester");
 		LanguageRegistry.addName(spawner, "Spawner");
 		LanguageRegistry.addName(special_controller, "Special controller");
-		//LanguageRegistry.addName(redstone_tick, "Redstone tick");
+		//LanguageRegistry.addName(pulsar, "Redstone pulsar");
 		//LanguageRegistry.addName(chunker, "Chunk loader");
 		LanguageRegistry.addName(laser, "Laser");
 	}

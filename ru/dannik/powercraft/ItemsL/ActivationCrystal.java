@@ -7,7 +7,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import ru.dannik.powercraft.Main;
-import ru.dannik.powercraft.ItemsL.activationcrystal.Plasm;
 
 public class ActivationCrystal extends Item{
 	
@@ -15,15 +14,6 @@ public class ActivationCrystal extends Item{
     	this.setCreativeTab(Main.tabPowerCraft);
     	this.setTextureName("powercraftreloaded:ActivationCrystal");
     	maxStackSize = 1;
-    }
-    
-    public ItemStack onItemRightClick(ItemStack is, World world, EntityPlayer player)
-    {
-         if(!world.isRemote)
-         {
-             world.spawnEntityInWorld(new Plasm(world, player));
-         }
-         return is;
     }
     
 	@SideOnly(Side.CLIENT)

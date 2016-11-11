@@ -19,6 +19,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import ru.dannik.powercraft.Main;
 import ru.dannik.powercraft.BlocksL.BlockList;
+import ru.dannik.powercraft.utils.BaseUtils;
 
 public class SpecialController extends Block{
 
@@ -38,6 +39,10 @@ public class SpecialController extends Block{
 	}
 	
 	public boolean isOpaqueCube() {
+		return false;
+	}
+	
+	public boolean renderAsNormalBlock() {
 		return false;
 	}
 	
@@ -79,23 +84,26 @@ public class SpecialController extends Block{
 	
 	public void onNeighborBlockChange(World world, int x, int y, int z, Block b) {
     	if(world.isBlockIndirectlyGettingPowered(x, y, z)) {
-  
 			if (world.getBlock(x + 1, y, z) == BlockList.spawner){
 				TileEntity spawner = world.getTileEntity(x + 1, y, z);
 				MobSpawnerBaseLogic logic = ((TileEntityMobSpawner)spawner).func_145881_a();
-				logic.spawnDelay = 0;
+				String type = logic.getEntityNameToSpawn();
+				BaseUtils.spawnMobs(world, x + 1, y, z, type);
 			}else if(world.getBlock(x, y, z + 1) == BlockList.spawner){
 				TileEntity spawner = world.getTileEntity(x, y, z + 1);
 				MobSpawnerBaseLogic logic = ((TileEntityMobSpawner)spawner).func_145881_a();
-				logic.spawnDelay = 0;
+				String type = logic.getEntityNameToSpawn();
+				BaseUtils.spawnMobs(world, x, y, z + 1, type);
 			}else if(world.getBlock(x - 1, y, z) == BlockList.spawner){
 				TileEntity spawner = world.getTileEntity(x - 1, y, z);
 				MobSpawnerBaseLogic logic = ((TileEntityMobSpawner)spawner).func_145881_a();
-				logic.spawnDelay = 0;
+				String type = logic.getEntityNameToSpawn();
+				BaseUtils.spawnMobs(world, x - 1, y, z, type);
 			}else if(world.getBlock(x, y, z - 1) == BlockList.spawner){
 				TileEntity spawner = world.getTileEntity(x, y, z - 1);
 				MobSpawnerBaseLogic logic = ((TileEntityMobSpawner)spawner).func_145881_a();
-				logic.spawnDelay = 0;
+				String type = logic.getEntityNameToSpawn();
+				BaseUtils.spawnMobs(world, x, y, z - 1, type);
 			}
 		}
 	}

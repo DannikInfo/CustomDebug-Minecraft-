@@ -22,7 +22,7 @@ public class InventoryHighStackCompressor implements IInventory {
 	public int getInventoryStackLimit() {
 		return 512;//Лимит размер стака в слоте
 	}
-	
+
 	@Override
 	public int getSizeInventory() {
 		return inventory.length;//Количество слотов инвентаря

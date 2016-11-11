@@ -6,7 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import ru.dannik.powercraft.Main;
-import ru.dannik.powercraft.gui.ContainerCraftingTool;
+import ru.dannik.powercraft.gui.container.ContainerCraftingTool;
 
 public class CraftingTool extends Item{
 

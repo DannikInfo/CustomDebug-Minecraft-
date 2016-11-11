@@ -15,7 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import ru.dannik.powercraft.Main;
-import ru.dannik.powercraft.gui.ContainerCompressor;
+import ru.dannik.powercraft.gui.container.ContainerCompressor;
 
 public class Compressor extends Item{
 	
@@ -30,7 +30,6 @@ public class Compressor extends Item{
 
 		} else {
 			player.openGui(Main.instance, 1, world, (int)player.posX, (int)player.posY, (int)player.posZ);
-			//Где "id" - это ид вашего окна.
 		}
 		return super.onItemRightClick(is, world, player);
 	}

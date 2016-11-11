@@ -1,43 +1,33 @@
 package ru.dannik.powercraft;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
+import cpw.mods.fml.common.network.simpleimpl.MessageContext;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
 import ru.dannik.powercraft.BlocksL.BlockList;
-import ru.dannik.powercraft.BlocksL.Crystal.Cyan.RendererCyanCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Cyan.RendererItemCyanCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Cyan.TileEntityCyanCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.DarkBlue.RendererDarkBlueCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.DarkBlue.RendererItemDarkBlueCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.DarkBlue.TileEntityDarkBlueCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Green.RendererGreenCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Green.RendererItemGreenCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Green.TileEntityGreenCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.LightBlue.RendererItemLightBlueCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.LightBlue.RendererLightBlueCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.LightBlue.TileEntityLightBlueCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Orange.RendererItemOrangeCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Orange.RendererOrangeCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Orange.TileEntityOrangeCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Purple.RendererItemPurpleCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Purple.RendererPurpleCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Purple.TileEntityPurpleCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Red.RendererItemRedCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Red.RendererRedCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Red.TileEntityRedCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Yellow.RendererItemYellowCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Yellow.RendererYellowCrystal;
-import ru.dannik.powercraft.BlocksL.Crystal.Yellow.TileEntityYellowCrystal;
-import ru.dannik.powercraft.BlocksL.IronFrame.RendererIronFrame;
-import ru.dannik.powercraft.BlocksL.IronFrame.RendererItemIronFrame;
-import ru.dannik.powercraft.BlocksL.IronFrame.TileEntityIronFrame;
+import ru.dannik.powercraft.BlocksL.Crystal.RendererCrystal;
+import ru.dannik.powercraft.BlocksL.Crystal.RendererItemCrystal;
+import ru.dannik.powercraft.BlocksL.Crystal.TileEntityCrystal;
 import ru.dannik.powercraft.BlocksL.Laser.RendererItemLaser;
 import ru.dannik.powercraft.BlocksL.Laser.RendererLaser;
 import ru.dannik.powercraft.BlocksL.Laser.TileEntityLaser;
-import ru.dannik.powercraft.BlocksL.Teleporter.RendererItemPowerPortal;
-import ru.dannik.powercraft.BlocksL.Teleporter.RendererPowerPortal;
-import ru.dannik.powercraft.BlocksL.Teleporter.TileEntityPowerPortal;
+import ru.dannik.powercraft.BlocksL.Teleporter.RendererItemTeleporter;
+import ru.dannik.powercraft.BlocksL.Teleporter.RendererTeleporter;
+import ru.dannik.powercraft.BlocksL.Teleporter.TileEntityTeleporter;
+import ru.dannik.powercraft.BlocksL.deco.Chimeny.RendererChimeny;
+import ru.dannik.powercraft.BlocksL.deco.Chimeny.RendererItemChimeny;
+import ru.dannik.powercraft.BlocksL.deco.Chimeny.TileEntityChimeny;
+import ru.dannik.powercraft.BlocksL.deco.IronFrame.RendererIronFrame;
+import ru.dannik.powercraft.BlocksL.deco.IronFrame.RendererItemIronFrame;
+import ru.dannik.powercraft.BlocksL.deco.IronFrame.TileEntityIronFrame;
+import ru.dannik.powercraft.BlocksL.logic.Detector.RendererDetector;
+import ru.dannik.powercraft.BlocksL.logic.Detector.RendererDetectorOff;
+import ru.dannik.powercraft.BlocksL.logic.Detector.RendererItemDetector;
+import ru.dannik.powercraft.BlocksL.logic.Detector.TileEntityDetector;
+import ru.dannik.powercraft.BlocksL.logic.Detector.TileEntityDetectorOff;
 
 public class ClientProxy extends CommonProxy {
 
@@ -49,32 +39,37 @@ public class ClientProxy extends CommonProxy {
 		super.init();
 		//Blocks
 		
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPowerPortal.class, new RendererPowerPortal());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTeleporter.class, new RendererTeleporter());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityIronFrame.class, new RendererIronFrame());
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLightBlueCrystal.class, new RendererLightBlueCrystal());
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityRedCrystal.class, new RendererRedCrystal());
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGreenCrystal.class, new RendererGreenCrystal());
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityDarkBlueCrystal.class, new RendererDarkBlueCrystal());
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPurpleCrystal.class, new RendererPurpleCrystal());
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityOrangeCrystal.class, new RendererOrangeCrystal());
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCyanCrystal.class, new RendererCyanCrystal());
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityYellowCrystal.class, new RendererYellowCrystal());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCrystal.class, new RendererCrystal());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLaser.class, new RendererLaser());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityChimeny.class, new RendererChimeny());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityDetector.class, new RendererDetector());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityDetectorOff.class, new RendererDetectorOff());
 		
 		//items
 		
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.powerportal), (IItemRenderer) new RendererItemPowerPortal());
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.teleporter), (IItemRenderer) new RendererItemTeleporter());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.ironframe), (IItemRenderer) new RendererItemIronFrame());
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.lightbluecrystal), (IItemRenderer) new RendererItemLightBlueCrystal());
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.redcrystal), (IItemRenderer) new RendererItemRedCrystal());
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.greencrystal), (IItemRenderer) new RendererItemGreenCrystal());
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.darkbluecrystal), (IItemRenderer) new RendererItemDarkBlueCrystal());
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.purplecrystal), (IItemRenderer) new RendererItemPurpleCrystal());
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.orangecrystal), (IItemRenderer) new RendererItemOrangeCrystal());
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.cyancrystal), (IItemRenderer) new RendererItemCyanCrystal());
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.yellowcrystal), (IItemRenderer) new RendererItemYellowCrystal());
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.crystal), (IItemRenderer) new RendererItemCrystal());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.laser), (IItemRenderer) new RendererItemLaser());
-		
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.chimeny), (IItemRenderer) new RendererItemChimeny());
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.detector), (IItemRenderer) new RendererItemDetector());
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockList.detectoroff), (IItemRenderer) new RendererItemDetector());
 	}
+	
+
+	@Override
+	public EntityPlayer getPlayerEntity(MessageContext ctx) {
+		// Note that if you simply return 'Minecraft.getMinecraft().thePlayer',
+		// your packets will not work as expected because you will be getting a
+		// client player even when you are on the server!
+		// Sounds absurd, but it's true.
+
+		// Solution is to double-check side before returning the player:
+		return (ctx.side.isClient() ? Minecraft.getMinecraft().thePlayer : super.getPlayerEntity(ctx));
+	}
+
+
 
 }
