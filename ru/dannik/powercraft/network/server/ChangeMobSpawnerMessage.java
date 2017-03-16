@@ -7,7 +7,7 @@ import cpw.mods.fml.relauncher.Side;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.world.World;
-import ru.dannik.powercraft.BlocksL.logic.Spawner;
+import ru.dannik.powercraft.blocks.logic.Spawner;
 import ru.dannik.powercraft.network.AbstractMessage.AbstractServerMessage;
 
 public class ChangeMobSpawnerMessage extends AbstractServerMessage<ChangeMobSpawnerMessage>{

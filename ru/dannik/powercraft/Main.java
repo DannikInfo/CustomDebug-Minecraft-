@@ -15,10 +15,10 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.ForgeChunkManager;
-import ru.dannik.powercraft.BlocksL.BlockList;
-import ru.dannik.powercraft.BlocksL.Chunker.ChunkerCallback;
-import ru.dannik.powercraft.ItemsL.ItemList;
+import ru.dannik.powercraft.blocks.BlockList;
+import ru.dannik.powercraft.blocks.chunker.ChunkerCallback;
 import ru.dannik.powercraft.gui.GuiHandler;
+import ru.dannik.powercraft.items.ItemList;
 import ru.dannik.powercraft.network.PacketDispatcher;
 
 @Mod (modid = "powercraftreloaded", name = "PowerCraft Reloaded", version = "1.0")	//basic info mod

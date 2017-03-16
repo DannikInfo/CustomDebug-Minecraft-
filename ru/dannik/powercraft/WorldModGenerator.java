@@ -8,8 +8,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-import ru.dannik.powercraft.BlocksL.BlockList;
-import ru.dannik.powercraft.BlocksL.Crystal.Crystal;
+import ru.dannik.powercraft.blocks.BlockList;
+import ru.dannik.powercraft.blocks.crystal.Crystal;
 
 public class WorldModGenerator implements IWorldGenerator{
 

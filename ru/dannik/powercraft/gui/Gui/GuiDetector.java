@@ -1,4 +1,4 @@
-package ru.dannik.powercraft.gui.Gui;
+package ru.dannik.powercraft.gui.gui;
 
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -7,7 +7,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import ru.dannik.powercraft.Main;
-import ru.dannik.powercraft.BlocksL.logic.Detector.Detector;
+import ru.dannik.powercraft.blocks.logic.detector.Detector;
 import ru.dannik.powercraft.gui.container.ContainerDetector;
 
 public class GuiDetector extends GuiContainer{

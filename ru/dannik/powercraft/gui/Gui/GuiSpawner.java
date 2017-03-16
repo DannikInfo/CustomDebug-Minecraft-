@@ -1,4 +1,4 @@
-package ru.dannik.powercraft.gui.Gui;
+package ru.dannik.powercraft.gui.gui;
 
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
@@ -8,7 +8,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import ru.dannik.powercraft.Main;
-import ru.dannik.powercraft.BlocksL.logic.Spawner;
+import ru.dannik.powercraft.blocks.logic.Spawner;
 import ru.dannik.powercraft.gui.container.ContainerSpawner;
 import ru.dannik.powercraft.network.PacketDispatcher;
 import ru.dannik.powercraft.network.server.ChangeMobSpawnerMessage;

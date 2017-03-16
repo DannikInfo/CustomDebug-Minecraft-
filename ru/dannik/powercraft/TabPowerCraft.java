@@ -4,7 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import ru.dannik.powercraft.ItemsL.ItemList;
+import ru.dannik.powercraft.items.ItemList;
  
 public class TabPowerCraft extends CreativeTabs {
  

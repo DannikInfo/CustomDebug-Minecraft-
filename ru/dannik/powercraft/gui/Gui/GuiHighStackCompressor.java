@@ -1,4 +1,4 @@
-package ru.dannik.powercraft.gui.Gui;
+package ru.dannik.powercraft.gui.gui;
 
 import org.lwjgl.opengl.GL11;
 
