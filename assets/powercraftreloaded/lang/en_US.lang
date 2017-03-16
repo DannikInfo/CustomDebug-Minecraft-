@@ -1,0 +1,53 @@
+---------PowerCrystal localization----------------
+tile.powercraftreloaded.Crystal.Cyan.name=Cyan crystal
+tile.powercraftreloaded.Crystal.DarkBlue.name=Darkblue crystal
+tile.powercraftreloaded.Crystal.Green.name=Green crystal
+tile.powercraftreloaded.Crystal.LightBlue.name=Lightblue crystal
+tile.powercraftreloaded.Crystal.Orange.name=Orange crystal
+tile.powercraftreloaded.Crystal.Purple.name=Purple crystal
+tile.powercraftreloaded.Crystal.Red.name=Red crystal
+tile.powercraftreloaded.Crystal.Yellow.name=Yellow crystal
+---------Chimeny localization----------------------
+tile.powercraftreloaded.Chimeny.Cobblestone.name=Cobblestone chimeny
+tile.powercraftreloaded.Chimeny.MossyCobblestone.name=Cobblestone mossy chimeny
+tile.powercraftreloaded.Chimeny.Brick.name=Brick chimeny
+tile.powercraftreloaded.Chimeny.StoneBrick.name=Stone brick chimeny
+tile.powercraftreloaded.Chimeny.SandStone.name=Sandstone chimeny
+tile.powercraftreloaded.Chimeny.Iron.name=Iron chimeny
+tile.powercraftreloaded.Chimeny.NetherBrick.name=Nether brick chimeny
+tile.powercraftreloaded.Chimeny.NetherQuartz.name=Quartz chimeny
+tile.powercraftreloaded.Chimeny.Clay.name=Clay chimeny
+---------Entity spawner localization --------------
+entity.powercraftreloaded.Pig.name=Pig
+entity.powercraftreloaded.Zombie.name=Zombie
+entity.powercraftreloaded.PigZombie.name=Zombie pigman
+entity.powercraftreloaded.Creeper.name=Creeper
+entity.powercraftreloaded.Spider.name=Spider
+entity.powercraftreloaded.Slime.name=Slime
+entity.powercraftreloaded.CaveSpider.name=Cave spider
+entity.powercraftreloaded.LavaSlime.name=Magma cube
+entity.powercraftreloaded.Cow.name=Cow
+entity.powercraftreloaded.Skeleton.name=Skeleton
+entity.powercraftreloaded.Ghast.name=Ghast
+entity.powercraftreloaded.Enderman.name=Enderman
+entity.powercraftreloaded.Silverfish.name=Silverfish
+entity.powercraftreloaded.Blaze.name=Blaze
+entity.powercraftreloaded.Bat.name=Bat
+entity.powercraftreloaded.Witch.name=Witch
+entity.powercraftreloaded.Sheep.name=Sheep
+entity.powercraftreloaded.Chicken.name=Chicken
+entity.powercraftreloaded.Squid.name=Squid
+entity.powercraftreloaded.Wolf.name=Wolf
+entity.powercraftreloaded.MushroomCow.name=Mooshroom cow
+entity.powercraftreloaded.Ozelot.name=Ocelot
+entity.powercraftreloaded.Villager.name=Villager
+entity.powercraftreloaded.VillagerGolem.name=Villager golem
+entity.powercraftreloaded.SnowMan.name=Snow man
+entity.powercraftreloaded.Giant.name=Giant
+---------Detector localization---------------------
+tile.powercraftreloaded.Detector.Player_on.name=Player detector
+tile.powercraftreloaded.Detector.Player_off.name=Player detector
+tile.powercraftreloaded.Detector.Entity_on.name=Mob detector
+tile.powercraftreloaded.Detector.Entity_off.name=Mob detector
+tile.powercraftreloaded.Detector.Item_on.name=Item detector
+tile.powercraftreloaded.Detector.Item_off.name=Item detector
