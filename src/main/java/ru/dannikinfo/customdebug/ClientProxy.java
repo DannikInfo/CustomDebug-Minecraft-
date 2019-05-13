@@ -1,4 +1,4 @@
-package su.hota.dannikinfo.customdebug;
+package ru.dannikinfo.customdebug;
 
 import net.minecraftforge.common.MinecraftForge;
 
