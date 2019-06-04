@@ -1,4 +1,24 @@
-# CustomDebug-Minecraft-
-Модификация для майнкрафт 1.7.10-1.12.2, изменяет debug экран.
-[link](https://minecraft.curseforge.com/projects/custom-debug)
+# CustomDebug[Minecraft]
+Модификация для Minecraft 1.7.10-1.12
+Изменяет режим отладки по кнопке F3
 
+###Клавиши клавиатуры по умолчанию
+- R-Перезагрузка ресурсов
+- P-Настройки
+
+###Отображает
+- Координаты
+- Биом
+- Стороны света
+- Температуру
+- Уровень освещения
+
+###Режим разработчика:
+- Информация о блоках
+- Информация о сущностях
+
+##Благодарности
+- Крокодил
+
+#### [Curse](https://minecraft.curseforge.com/projects/customdebug)
+#### [mcmodding](https://forum.mcmodding.ru/threads/1-7-10-1-12-2-customdebug.10081/)
