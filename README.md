@@ -20,5 +20,5 @@
 
 ### Благодарности: Крокодил
 
-#### [Curse](https://minecraft.curseforge.com/projects/customdebug)
+#### [Curse](https://minecraft.curseforge.com/projects/custom-debug)
 #### [mcmodding](https://forum.mcmodding.ru/threads/1-7-10-1-12-2-customdebug.10081/)
